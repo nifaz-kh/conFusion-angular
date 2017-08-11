@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 import { NgModule } from '@angular/core';
+
 
 import 'hammerjs';
 
@@ -37,12 +38,13 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     MenuComponent,
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     FormsModule,
     MaterialModule,
-    AppRoutingModule
+    ReactiveFormsModule,
   ],
   providers: [
     DishService,
