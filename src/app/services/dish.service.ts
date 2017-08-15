@@ -18,12 +18,16 @@ export class DishService {
   }
 
   getDish(id: number): Observable<Dish> {
-    let dish = DISHES.filter((dish) => (dish.id === id))[0];
+    const dish = DISHES.filter((dish) => (dish.id === id))[0];
     return Observable.of(dish).delay(3000);
   }
 
   getFeaturedDish(): Observable<Dish> {
-    let dish = DISHES.filter((dish) => dish.featured)[0];
+    const dish = DISHES.filter((dish) => dish.featured)[0];
     return Observable.of(dish).delay(4000);
+  }
+
+  getDishIds(): Observable<number[]> {
+    return Observable.of(DISHES.map((dish)=>dish.id)).delay(2000);
   }
 }
