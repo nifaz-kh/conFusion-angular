@@ -19,15 +19,15 @@ export class DishService {
 
   getDish(id: number): Observable<Dish> {
     const dish = DISHES.filter((dish) => (dish.id === id))[0];
-    return Observable.of(dish).delay(3000);
+    return Observable.of(dish).delay(300);
   }
 
   getFeaturedDish(): Observable<Dish> {
     const dish = DISHES.filter((dish) => dish.featured)[0];
-    return Observable.of(dish).delay(4000);
+    return Observable.of(dish).delay(400);
   }
 
   getDishIds(): Observable<number[]> {
-    return Observable.of(DISHES.map((dish)=>dish.id)).delay(2000);
+    return Observable.of(DISHES.map((dish)=>dish.id)).delay(200);
   }
 }
