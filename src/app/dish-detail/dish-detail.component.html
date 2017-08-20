@@ -1,10 +1,5 @@
 <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center" fxLayoutGap="10px" fxLayoutGap.xs="0">
 
-    <div [hidden]="dish">
-        <md-spinner></md-spinner>
-        <h4>Loading . . . Please Wait</h4>
-    </div>
-
     <div fxFlex="40" *ngIf="dish">
         <div fxFlex>
             <md-card>
@@ -65,5 +60,16 @@
                 <button type="submit" md-button class="background-primary text-floral-white" [disabled]="commentForm.invalid">Submit</button>
             </form>
         </div>
+    </div>
+
+
+    <div [hidden]="dish || errMess">
+        <md-spinner></md-spinner>
+        <h4>Loading . . . Please Wait</h4>
+    </div>
+
+    <div *ngIf="errMess">
+        <h2>Error</h2>
+        <h4>{{ errMess }}</h4>
     </div>
 </div>
